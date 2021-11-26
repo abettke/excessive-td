@@ -4,6 +4,7 @@ import { z } from "zod"
 
 const CreateTask = z.object({
   name: z.string(),
+  description: z.string(),
 })
 
 export default resolver.pipe(resolver.zod(CreateTask), resolver.authorize(), async (input) => {
